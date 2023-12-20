@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="/css/style.css">
+<h2>Test Yourself</h2>
+<form id="question" action="/" method="POST"></form>
+<% for(voci of voclist) { %>
+  How do you say : <span style="color: rgb(8, 0, 255);"><%= voci.word %></span> ?
+  <br>
+  Your answer : <input name="answer" id="answer" />
+    <form action="/answer" method="POST">
+      <input type="submit" id="bleu" value="Correction" />
+      <div class="total-line">
+        <span>La bonne réponse est <%= voci.translation %></span>
+      </div>
+    <br>
+  </form>
+  <br>
+<% } %>
+</form>
+<br>
+
+
+<!-- Bouton pour aller vers la page de contenu -->
+<a href="/vocabulary">
+    <button>Rajouter un mot / Voir liste des mots</button>
+</a>
+
+<!-- <script>
+  document.getElementById('question').addEventListener('submit', function(e) {
+    if (e.submitter && e.submitter.id === 'corriger') {
+      e.preventDefault(); 
+      corriger(); 
+    }
+  });
+
+  function corriger() {
+    var answer = document.getElementById("answer").value;
+      
+      if (answer.toLowerCase() === voci.word.toLowerCase()) {
+        document.getElementById("displayArea").innerHTML = "Correct!";
+        document.getElementById("displayArea").style.color = "green";
+      } else {
+        document.getElementById("displayArea").innerHTML = "Unfortunately, the correct answer is: " + voci.word;
+        document.getElementById("displayArea").style.color = "red";
+      }
+    }
+</script> -->
+
+
+

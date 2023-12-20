@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="/css/style2.css">
+<h2>Vocabulary</h2>
+
+<table>
+  <tr>
+    <th>Word</th>
+    <th>Translation</th>
+    <th>Pourcentage</th>
+    <th>Action</th>
+  </tr>
+  <% for(voci of voclist) { %>
+    <tr>
+      <th><%= voci.word %></th>
+      <th><%= voci.translation %></th>
+      <th><%= voci.pourcentage %>%</th>
+      <th><a href="/delete/<%= voci.idvoc %>">Delete</a></th>
+    </tr>
+  <% } %>
+</table>
+
+<h2>Add a new word</h2>
+
+
+<form action="/add" method="POST">
+  <input type="text" id="word" name="word">
+  <input type="text" id="translation" name="translation">
+  <input type="submit" id="bleu" value="Add" />
+</form> 
+
+
+<a href="/">
+  <button>Retour à la page test</button>
+</a>
+
+</body>
+</html>
